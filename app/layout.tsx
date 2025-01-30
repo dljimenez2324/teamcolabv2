@@ -8,7 +8,6 @@ import NavBar from "./NavBar";
 import AuthProvider from "./auth/Provider";
 import QueryClientProvider from "./QueryClientProvider";
 
-
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",

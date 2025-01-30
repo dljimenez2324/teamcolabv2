@@ -55,7 +55,7 @@ export async function DELETE(request:NextRequest,{params}: {params:{id:string}})
     const sessions = await getServerSession(authOptions)
 
     if(!sessions) 
-       return NextResponse.json({}),{status: 401};
+       return NextResponse.json({},{status: 401});
 
     
 
