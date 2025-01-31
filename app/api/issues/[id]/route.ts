@@ -6,8 +6,9 @@ import authOptions from "@/app/auth/authOptions";
 import { getServerSession } from "next-auth";
 
 
-export async function PATCH(request:NextRequest,{params}: {params:{id:string}}) {
-
+export async function PATCH(request:NextRequest, props: {params: Promise<{id:string}>}) {
+    
+    const params = await props.params;
     const sessions = await getServerSession(authOptions)
 
     if(!sessions) 
@@ -50,8 +51,9 @@ export async function PATCH(request:NextRequest,{params}: {params:{id:string}}) 
 
 
 
-export async function DELETE(request:NextRequest,{params}: {params:{id:string}}) {
+export async function DELETE(request:NextRequest, props: {params: Promise<{id:string}>}) {
 
+    const params = await props.params;
     const sessions = await getServerSession(authOptions)
 
     if(!sessions) 
